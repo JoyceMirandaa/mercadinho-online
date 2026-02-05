@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado 🛒</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+            <p class="logo"></p>
+            <h1 class="titulo-header">Mercado 🛒</h1>
+            <button class="menu-toggle" id="menuToggle">
+                &#9776; <!-- Ícone de hambúrguer (☰) -->
+            </button>
+    </header>
+
+    <!-- Menu que abre apos clicar no icone (☰) -->
+    <nav class="menu" id="menu">
+                <ul>
+                    <li><a onclick="MudarTema()" id="tema-nav">Tema <img id="btnTema" src="/imagens/sol-tema.svg"  alt="Alternar tema"></a></li>
+                    <li><a id="abrirPerfil" onclick="AbrirPerfil()">Perfil <img src="/imagens/perfil-icon.svg"  alt="Perfil"></a></li>
+                    <li><a href="/carrinho/carrinho.html">Lista de compras <img src="/imagens/lista-icon.svg"  alt="Lista de compras"></a></li>
+                    <li><a href="#">Produtos <img src="/imagens/produtos-icon.svg"  alt="Aba de produtos"></a></li>
+                </ul>
+    </nav>
+
+
+    <!-- Aba de login -->
+    <div id="perfil-menu" class="perfil-menu">
+        <div class="perfil-conteudo">
+        <span id="fecharPerfil" class="fechar">&times;</span><!-- &times; é o X -->
+
+        <h1>Login</h1>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="exemplo@email.com" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+            <button type="submit" id="btn-enviar">Entrar</button>
+        </form>
+        </div>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body{
+    font-family: 'Sofia', sans-serif;
+    font-size: 30px;
+    background-color: #6f656c;
+}
+
+.carousel-item{
+    display: flex;
+    gap: 30px;         
+    padding: 10px;
+}
+
+.carousel-item img.logo {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+
+.carousel-item img.roupas {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+
+.info{
+    background-color: white;
+  width: 200px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.carousel-control-prev, .carousel-control-next{
+    color: #afaf0e;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+    background-color: #afaf0e;
+}
+
+.carousel-prev, .carousel-next{
+    color: #afaf0e;
+}
+
+.carousel-prev-icon, .carousel-next-icon{
+    background-color: #afaf0e;
+}
