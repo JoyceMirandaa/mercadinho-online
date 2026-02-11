@@ -24,9 +24,11 @@ export const Header = ({onMudarTema, onAbrirPerfil} : HeaderProps) => {
       
       <View style={[styles.header, darkMode && styles.headerDark]}>
 
-        <Image source={require('../imgP/logo.svg')} style={styles.imagemLogo}/>
+        <Image source={require('../imgP/logo.png')} style={styles.imagemLogo}/>
 
-        <Text style={styles.titulo }>Mercado 🛒</Text>
+        <Link href="/(tabs)/main" asChild>
+          <Text style={styles.titulo }>Mercado 🛒</Text>
+        </Link>
 
         <Pressable onPress={() => setMenuAberto(!menuAberto)}>
           <Text style={styles.menuToggle}>☰</Text>
@@ -35,12 +37,7 @@ export const Header = ({onMudarTema, onAbrirPerfil} : HeaderProps) => {
 
       {/* MENU */}
       {menuAberto && (
-        <View
-          style={[
-            styles.menu,
-            darkMode && styles.menuDark,
-          ]}
-        >
+        <View style={[styles.menu, darkMode && styles.menuDark,]}>
           <Pressable style={styles.menuItem} onPress={MudarTema}>
             <Text style={styles.menuText}>
               Tema {darkMode ? '🌙' : '🌞'}
@@ -83,7 +80,8 @@ const styles = StyleSheet.create({
 
   header: {
     backgroundColor: '#2ecc71',
-    padding: 15,
+    paddingHorizontal: 15,
+    height: 70,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -97,6 +95,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
+    paddingRight: 30
   },
 
   menuToggle: {
@@ -106,7 +105,7 @@ const styles = StyleSheet.create({
 
   menu: {
     position: 'absolute',
-    top: 65,
+    top: 70,
     right: 0,
     width: 200,
     backgroundColor: '#56a356',
@@ -128,8 +127,9 @@ const styles = StyleSheet.create({
   },
 
   imagemLogo : {
-    height: 50,
-    width: 50
+    width: 80,
+    height: 80,
+    resizeMode: 'contain',
   }
 });
 

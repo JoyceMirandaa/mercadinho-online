@@ -1,30 +1,54 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView, SafeAreaView, Text } from 'react-native';
 import { Link, Stack } from 'expo-router';
+import { useState } from 'react';
 
-export default function NotFoundScreen() {
+import Header from '@/app/components/header';
+import CardsBebidas from '@/app/components/CardsGeral/bebidasCards';
+export default function Bebidas() {
+  const [darkMode, setDarkMode] = useState(false);
+  const [perfilAberto, setPerfilAberto] = useState(false);
+
   return (
-    <>
-      <Stack.Screen options={{ title: 'Oops! Not Found' }} />
-      <View style={styles.container}>
-        <Link href="/(tabs)/main" style={styles.button}>
-          Bebidas
-        </Link>
-      </View>
-    </>
+      <ScrollView showsVerticalScrollIndicator={true} contentContainerStyle={{ paddingBottom: 50 }}> {/* flexGrow serve para o conteudo dentro dele conseguir ocupar tudo do Scroll */}
+        <SafeAreaView style={[styles.container, darkMode && styles.containerDark]}>
+          <View style={{zIndex: 1, marginBottom: 20}}>
+            <Header onMudarTema={() => setDarkMode(!darkMode)} onAbrirPerfil={() => setPerfilAberto(true)}/>
+          </View>
+
+          <View>
+            <Text style={[styles.titulo, darkMode && styles.tituloDark]}>Bebidas</Text>
+          </View>
+
+        <View style={{marginTop: 15}}>
+          <CardsBebidas darkMode={darkMode}/>
+        </View>
+
+        </SafeAreaView>
+      </ScrollView>
+
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#f2f2f2',
   },
 
-  button: {
-    fontSize: 20,
-    textDecorationLine: 'underline',
-    color: '#fff',
+  containerDark: {
+    backgroundColor: '#414040',
+  },
+  titulo : {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 45,
+    fontWeight: 'bold',
+    marginBottom: 15,
+  },
+
+  tituloDark : {
+    color : '#ccc'
   },
 });
